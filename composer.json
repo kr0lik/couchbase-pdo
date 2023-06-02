@@ -1,0 +1,37 @@
+{
+    "name": "kr0lik/couchbase-pdo",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "ext-couchbase": ">=3.2"
+    },
+    "require-dev": {
+        "dg/bypass-finals": "^1.4",
+        "kr0lik/php-cs-fixer": "^2.0",
+        "kr0lik/phpstan-rules": "^2.0",
+        "icanhazstring/composer-unused": "^0.8",
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "kr0lik\\CouchbasePdo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "kr0lik\\CouchbasePdo\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "bin-dir": "bin",
+        "allow-plugins": {
+            "icanhazstring/composer-unused": true
+        },
+        "optimize-autoloader": true
+    }
+}

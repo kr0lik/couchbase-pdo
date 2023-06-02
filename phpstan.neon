@@ -1,0 +1,29 @@
+includes:
+  - vendor/kr0lik/phpstan-rules/extensions/general-extension.neon
+  - vendor/kr0lik/phpstan-rules/extensions/phpunit-extension.neon
+
+parameters:
+    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        -
+          message: "#Class Couchbase\\\\Cluster constructor invoked with 2 parameters, 1 required#"
+          path: src/CouchBaseConnection.php
+        -
+          message: "#Cannot cast object\\|null to int#"
+          path: src/Datastructures/CouchbaseQueue.php
+        -
+          message: "#Cannot cast object\\|null to string#"
+          path: src/Datastructures/CouchbaseQueue.php
+        -
+          message: "#Couchbase\\\\DocumentNotFoundException is never thrown in the corresponding try block#"
+          path: src/Datastructures/CouchbaseQueue.php
+        -
+          message: "#Couchbase\\\\[a-zA-Z]+ is never thrown in the corresponding try block#"
+          path: src/CouchBaseClient.php
+        -
+          message: "#Useless @throws Couchbase\\\\KeyExistsException annotation#"
+          path: src/CouchBaseClient.php
+        - '#PHPDoc tag @throws with type [a-zA-Z0-9\\_\|]+ is not compatible with parent#'
+        -
+          message: "#Return type of call to method PHPUnit\\\\Framework\\\\MockObject\\\\MockBuilder<kr0lik\\\\CouchbasePdo\\\\CouchBaseConnection>::getMockForAbstractClass\\(\\) contains unresolvable type#"
+          path: tests/Bucket/BaseBucketTest.php
